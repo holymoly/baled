@@ -8,7 +8,6 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./log-view.component.css']
 })
 export class LogViewComponent implements OnInit {
-
   messages: string[] =[];
 
   constructor(private websocketService: WebsocketService) {}

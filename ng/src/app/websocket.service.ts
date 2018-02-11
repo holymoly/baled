@@ -6,7 +6,6 @@ import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class WebsocketService {
-
   WebSocket: any; 
   messages: string[] = [];
 

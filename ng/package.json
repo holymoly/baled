@@ -12,7 +12,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/schematics": "0.0.46",
     "@angular/animations": "^5.1.0",
     "@angular/common": "^5.1.0",
     "@angular/compiler": "^5.1.0",
@@ -24,13 +23,15 @@
     "@angular/router": "^5.1.0",
     "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.4.1",
-    "jquery": "^1.9.1",
+    "jquery": "^3.0.0",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.4",
+    "@angular-devkit/core": "^0.3.1",
+    "@angular-devkit/schematics": "0.0.46",
+    "@angular/cli": "^1.6.8",
     "@angular/compiler-cli": "^5.1.0",
     "@angular/language-service": "^5.1.0",
     "@types/jasmine": "~2.8.3",

@@ -6,8 +6,7 @@ import { WebsocketService } from '../websocket.service';
   templateUrl: './color-slider.component.html',
   styleUrls: ['./color-slider.component.css']
 })
-export class ColorSliderComponent implements OnInit {
-  
+export class ColorSliderComponent implements OnInit { 
   value: number = 20;
   @Input() name: string;
 
@@ -28,7 +27,6 @@ export class ColorSliderComponent implements OnInit {
   }
 
   parseMessage(message){
-    
     if(JSON.parse(message.data).msgIdent == 100){
       console.log(JSON.parse(message.data)[this.name]);
       this.value=JSON.parse(message.data)[this.name];
