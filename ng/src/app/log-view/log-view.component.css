@@ -1,0 +1,6 @@
+.log{
+  max-height: 150px;
+  overflow: auto;
+  right: 20px;
+  left: 20px;  
+}

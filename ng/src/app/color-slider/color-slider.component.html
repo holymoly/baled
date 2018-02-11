@@ -1,0 +1,7 @@
+<p>
+  <label class="col-sm-2"> {{name}} </label>
+
+  <input type="range" min="0" max="255" [(ngModel)]="value" (ngModelChange)="sendData($event)"/>
+  <input class="color"[(ngModel)]="value" (ngModelChange)="sendData($event)" size="3"> 
+
+</p>
