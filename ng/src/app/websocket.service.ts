@@ -24,7 +24,7 @@ export class WebsocketService {
     if(this.WebSocket.readyState===1){
       this.WebSocket.send(data);
     }else{
-      // Maybee deadlock if websocket is not reachable
+      // Maybe deadlock if websocket is not reachable
       var that = this;
       console.log("Server: Websocket not ready");
       setTimeout(function(){

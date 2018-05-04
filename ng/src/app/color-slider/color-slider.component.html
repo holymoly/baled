@@ -1,7 +1,11 @@
-<p>
-  <label class="col-sm-2"> {{name}} </label>
+<div class="row">
+  <div class="col-sm-4" >
+    {{name}}
+  </div> 
+  <div class="col-sm-8">
+    <input class="color"[(ngModel)]="value" (ngModelChange)="sendData($event)" size="3"> 
 
-  <input type="range" min="0" max="255" [(ngModel)]="value" (ngModelChange)="sendData($event)"/>
-  <input class="color"[(ngModel)]="value" (ngModelChange)="sendData($event)" size="3"> 
-
-</p>
+    <input class="slider" type="range" min="0" max="255" [(ngModel)]="value" (ngModelChange)="sendData($event)"/>
+  </div>
+  
+</div>

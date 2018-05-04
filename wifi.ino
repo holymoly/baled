@@ -1,6 +1,6 @@
 
-const char* ssid = "your_wifi";
-const char* password = "your_pass";
+const char* ssid = "ssid";
+const char* password = "password";
 
 #define retryMax 60
 

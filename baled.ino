@@ -23,13 +23,13 @@ int delayval = 10; // delay time
 int ledState[NUMPIXELS][4];
 
 int fadeStates[7][3] = {  
-   {255,   0,   0} ,   /*  initializers for row indexed by 0 */
-   {255, 255,   0} ,   /*  initializers for row indexed by 1 */
-   {0,   255,   0} ,   /*  initializers for row indexed by 2 */
-   {0,   255, 255} ,   /*  initializers for row indexed by 3 */
-   {0,     0, 255} ,   /*  initializers for row indexed by 4 */
-   {255,   0, 255} ,   /*  initializers for row indexed by 5 */
-   {255, 255, 255} ,   /*  initializers for row indexed by 6 */
+   {30,   0,   0} ,   /*  initializers for row indexed by 0 */
+   {30, 30,   0} ,   /*  initializers for row indexed by 1 */
+   {0,   30,   0} ,   /*  initializers for row indexed by 2 */
+   {0,   30, 30} ,   /*  initializers for row indexed by 3 */
+   {0,     0, 30} ,   /*  initializers for row indexed by 4 */
+   {30,   0, 30} ,   /*  initializers for row indexed by 5 */
+   {30, 30, 30} ,   /*  initializers for row indexed by 6 */
 };
 
 void setup() {

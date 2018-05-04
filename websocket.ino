@@ -15,8 +15,12 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
       }
     break;
     case WStype_TEXT:
+      char message[100];
       Serial.printf("[%u] get Text: %s\n", num, payload);
       jsonParse(payload);
+      
+      snprintf(message,101,"{\"msgIdent\":101,\"status\":\"updated\",\"red\":%i,\"green\":%i,\"blue\":%i}",red,green,blue);
+      webSocket.sendTXT(num, message);
     break;
   }
 }
@@ -36,8 +40,6 @@ void jsonParse(unsigned char *data){
   switch (caseSwitch) {
     //color received
     case 1:
-
-        
         if(strcmp(color, "red") == 0){
           Serial.printf("Color: %s Value: %d\n",color, value);
           red = value;

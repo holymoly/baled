@@ -1,5 +1,9 @@
-<p class="log bg-info">
-  <ng-container *ngFor="let message of messages">
-      {{ message }} <br>
-  </ng-container>
-</p>
+<div class="log bg-info">
+  logging
+  <input type="checkbox" [(ngModel)]="enableLog">
+  <div *ngIf="enableLog">
+    <ng-container *ngFor="let message of messages">
+        {{ message }} <br>
+    </ng-container>
+  </div>
+</div>

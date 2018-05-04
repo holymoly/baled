@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LogViewComponent implements OnInit {
   messages: string[] =[];
+  enableLog: boolean = false;
 
   constructor(private websocketService: WebsocketService) {}
 
@@ -21,6 +22,9 @@ export class LogViewComponent implements OnInit {
   }
 
   pushMessage(message){
-    this.messages.push(message.data);
+    //only store messages when loggin enabled
+    if(this.enableLog){
+      this.messages.unshift(message.data);
+    }
   }
 }
