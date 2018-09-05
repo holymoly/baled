@@ -41,12 +41,10 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }]
             }
           }
         },
@@ -120,6 +118,46 @@
           "options": {
             "tsConfig": [
               "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "NgBaledLib": {
+      "root": "projects/ng-baled-lib",
+      "sourceRoot": "projects/ng-baled-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-baled-lib/tsconfig.lib.json",
+            "project": "projects/ng-baled-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng-baled-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-baled-lib/src/test.ts",
+            "tsConfig": "projects/ng-baled-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-baled-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-baled-lib/tsconfig.lib.json",
+              "projects/ng-baled-lib/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

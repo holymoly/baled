@@ -12,6 +12,7 @@ import { ConfigComponent } from './config/config.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ColorComponent } from './color/color.component';
 import { NavbarTopComponent } from './navbar-top/navbar-top.component';
+import { WifiBarComponent } from './wifi-bar/wifi-bar.component';
 
 const appRoutes: Routes = [
   { path: 'color', component: ColorComponent },
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     ConfigComponent,
     PageNotFoundComponent,
     ColorComponent,
-    NavbarTopComponent
+    NavbarTopComponent,
+    WifiBarComponent
   ],
   imports: [
     RouterModule.forRoot(

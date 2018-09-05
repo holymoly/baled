@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
-import { of } from 'rxjs/observable/of';
+import { Observable, of, from } from 'rxjs';
+import { fromEvent } from 'rxjs';
+//import 'rxjs/add/observable/fromEvent';
+//import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class WebsocketService {
@@ -34,6 +35,6 @@ export class WebsocketService {
   }
 
   getMessage(): Observable<Event>{
-    return Observable.fromEvent(this.WebSocket,'message');
+    return fromEvent(this.WebSocket,'message');
   }
 }

@@ -1,19 +1,11 @@
-<div class="col-sm-12">
+<div class="col-12">
   <div class="card text-center" style="width: 18rem;">
     
     <div class="card-header">
-      {{ ipMan }}
+      WiFi
     </div>
 
     <div class="card-body">
-
-        <label for="InputSelectWifIMode">WiFi Mode</label>
-        <select class="form-control" id="InputSelectWifIMode" [(ngModel)]="wifiMode" name="wifiMode">
-          <option [ngValue]="0">WiFI OFF</option>
-          <option [ngValue]="1">Station</option>
-          <option [ngValue]="2">Soft AP</option>
-          <option [ngValue]="3">Station + Soft AP</option>
-        </select>
 
         <label for="InputSSID">SSID</label>
         <input [(ngModel)]="ssid" type="text" class="form-control" id="InputSSID" placeholder="SSID">
@@ -30,21 +22,28 @@
         <div *ngIf="ipMan">
           <label for="ip">Address</label>
           <div class="row">  
-            <input [(ngModel)]="ipAddress1" class="form-control col-sm-3" id="ip1" type="number" min="0" max="255">
-            <input [(ngModel)]="ipAddress2" class="form-control col-sm-3" id="ip2" type="number" min="0" max="255">
-            <input [(ngModel)]="ipAddress3" class="form-control col-sm-3" id="ip3" type="number" min="0" max="255">
-            <input [(ngModel)]="ipAddress4" class="form-control col-sm-3" id="ip4" type="number" min="0" max="255">
+            <input [(ngModel)]="ipAddress1" class="form-control col-3" id="ip1" type="number" min="0" max="255">
+            <input [(ngModel)]="ipAddress2" class="form-control col-3" id="ip2" type="number" min="0" max="255">
+            <input [(ngModel)]="ipAddress3" class="form-control col-3" id="ip3" type="number" min="0" max="255">
+            <input [(ngModel)]="ipAddress4" class="form-control col-3" id="ip4" type="number" min="0" max="255">
           </div>
           <label for="ip">Subnet</label>
           <div class="row">  
-            <input [(ngModel)]="ipSubnet1" class="form-control col-sm-3" id="mask1" type="number" min="0" max="255">
-            <input [(ngModel)]="ipSubnet1" class="form-control col-sm-3" id="mask2" type="number" min="0" max="255">
-            <input [(ngModel)]="ipSubnet1" class="form-control col-sm-3" id="mask3" type="number" min="0" max="255">
-            <input [(ngModel)]="ipSubnet1" class="form-control col-sm-3" id="mask4" type="number" min="0" max="255">
+            <input [(ngModel)]="ipSubnet1" class="form-control col-3" id="mask1" type="number" min="0" max="255">
+            <input [(ngModel)]="ipSubnet1" class="form-control col-3" id="mask2" type="number" min="0" max="255">
+            <input [(ngModel)]="ipSubnet1" class="form-control col-3" id="mask3" type="number" min="0" max="255">
+            <input [(ngModel)]="ipSubnet1" class="form-control col-3" id="mask4" type="number" min="0" max="255">
+          </div>
+          <label for="ip">Gateway</label>
+          <div class="row">  
+            <input [(ngModel)]="ipGateway1" class="form-control col-3" id="mask1" type="number" min="0" max="255">
+            <input [(ngModel)]="ipGateway2" class="form-control col-3" id="mask2" type="number" min="0" max="255">
+            <input [(ngModel)]="ipGateway3" class="form-control col-3" id="mask3" type="number" min="0" max="255">
+            <input [(ngModel)]="ipGateway4" class="form-control col-3" id="mask4" type="number" min="0" max="255">
           </div>
         </div>
         <p></p>
-        <button (click)="sendData()" class="btn btn-primary col-sm-12">Submit</button>
+        <button (click)="sendData()" class="btn btn-primary col-12">Submit</button>
 
     </div>
   </div>
