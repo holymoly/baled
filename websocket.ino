@@ -9,7 +9,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
        char message[100];
        Serial.printf("[%u] Connected from %d.%d.%d.%d url: %s\n", num, ip[0], ip[1], ip[2], ip[3], payload);
        //prepare actual values for client
-       snprintf(message,100,"{\"msgIdent\":100,\"status\":\"connected\",\"red\":%i,\"green\":%i,\"blue\":%i}",red,green,blue);
+       snprintf(message,100,"{\"msgIdent\":100,\"status\":\"connected\",\"red\":%i,\"green\":%i,\"blue\":%i,\"ledProgram\":%i}",red,green,blue,activProgram);
        // send message to client
        webSocket.sendTXT(num, message);
        sendWifiStrength();
@@ -54,10 +54,6 @@ void jsonParse(unsigned char *data){
           if(strcmp(color, "blue") == 0){
             blue = value;
           }
-          
-          for (int i=0; i<NUMPIXELS; i++){              //loop throug pixels
-            pixels.setPixelColor(i, pixels.Color(red,green,blue));
-          }
         }
       break;
     // wifi config received    
@@ -83,6 +79,15 @@ void jsonParse(unsigned char *data){
           int ipGateway4 = root["ipGateway4"];
 
           wifiConfig(ssid, password, ipMan, ipAddress1, ipAddress2, ipAddress3, ipAddress4, ipSubnet1, ipSubnet2, ipSubnet3, ipSubnet4, ipGateway1, ipGateway2, ipGateway3, ipGateway4);
+        }
+      break;
+    // Led program received    
+    case 201:
+        {
+          int ledProgram = root["ledProgram"];
+          Serial.print("Led Program: ");
+          Serial.println(ledProgram);
+          activProgram = ledProgram_type(ledProgram);
         }
       break;
     default:

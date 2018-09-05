@@ -66,7 +66,7 @@ void setup() {
 void loop() {
   ArduinoOTA.handle();
   
-  //ledFade();
+  setLeds(); // updates the colors for the leds
   pixels.show(); // This sends the updated pixel color to the hardware.
   delay(delayval);
   server.handleClient();
