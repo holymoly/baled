@@ -1,3 +1,4 @@
+#include <Ticker.h>
 #include <Adafruit_NeoPixel.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
@@ -17,6 +18,8 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ80
 
 ESP8266WebServer server(80);
 WebSocketsServer webSocket = WebSocketsServer(8080);
+
+Ticker websocketTimer5s;
 
 int delayval = 10; // delay time
 
@@ -57,6 +60,7 @@ void setup() {
       File f = dir.openFile("r");
       Serial.println(f.size());
   }
+  websocketSetup();
 }
 
 void loop() {

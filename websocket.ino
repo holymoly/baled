@@ -94,7 +94,7 @@ void websocketSendMessageTxt(const char *number, const char *name, const char  *
   char message[100];
   
   snprintf(message,100,"{\"msgIdent\":%s,\"%s\":%s}",number, name, payload);
-  Serial.println(message);
+  //Serial.println(message);
   webSocket.broadcastTXT(message);
 }
   
@@ -102,4 +102,8 @@ void websocketInit(){
   // start webSocket server
   webSocket.begin();
   webSocket.onEvent(webSocketEvent);
+}
+
+void websocketSetup(){
+  websocketTimer5s.attach(5,sendWifiStrength);
 }
