@@ -1,6 +1,51 @@
+// initial led values
 int red = 20;
 int green = 20;
 int blue = 20;
+
+
+typedef enum {
+  MANUAL, 
+  FADE, 
+  RANDOM} ledProgram_type;
+  
+ledProgram_type activProgram = MANUAL;
+
+//Controls which program is writing to the LEds
+void setLeds(){
+  switch (activProgram) {
+    //Write color received from websocket
+    case MANUAL:
+        {
+          //Colors for rgb will be set from websocket
+          for (int i=0; i<NUMPIXELS; i++){              
+            pixels.setPixelColor(i, pixels.Color(red,green,blue));
+          }
+        }
+      break;
+    // Call the fade program 
+    case FADE:
+        {
+          ledFade();
+        }
+      break;
+    // Call the fade program 
+    case RANDOM:
+        {
+          for (int i=0; i<NUMPIXELS; i++){              
+            pixels.setPixelColor(i, pixels.Color(random(0, 120),random(0, 120),random(0, 120)));
+          }
+        }
+      break;
+    default:
+        {
+          //Switch red if no mode was found
+          for (int i=0; i<NUMPIXELS; i++){              
+            pixels.setPixelColor(i, pixels.Color(20,0,0));
+          }
+        }
+  }
+}
 
 void ledFade() {
   for (int i=0; i<NUMPIXELS; i++){              //loop throug pixels

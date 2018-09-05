@@ -12,12 +12,14 @@ import { ConfigComponent } from './config/config.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ColorComponent } from './color/color.component';
 import { NavbarTopComponent } from './navbar-top/navbar-top.component';
+import { WifiBarComponent } from './wifi-bar/wifi-bar.component';
+import { LedProgramComponent } from './led-program/led-program.component';
 
 const appRoutes: Routes = [
-  { path: 'color', component: ColorComponent },
+  { path: 'led', component: LedProgramComponent },
   { path: 'config', component: ConfigComponent },
   { path: '',
-    redirectTo: 'color',
+    redirectTo: 'led',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
@@ -31,7 +33,9 @@ const appRoutes: Routes = [
     ConfigComponent,
     PageNotFoundComponent,
     ColorComponent,
-    NavbarTopComponent
+    NavbarTopComponent,
+    WifiBarComponent,
+    LedProgramComponent
   ],
   imports: [
     RouterModule.forRoot(
